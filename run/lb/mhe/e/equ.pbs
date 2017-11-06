@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N lb_pdz_equ
+#PBS -N lb_2pdz_equ
 #PBS -o pbs.out
 #PBS -e pbs.err
 #PBS -j oe
@@ -16,9 +16,9 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/composer_xe_2013.3.163/compil
 export AMBERHOME=/apps/amber16
 export MDEXE=$AMBERHOME/bin/pmemd.cuda
 
-i=0
-starting_mdin="/scratch/pbarletta/pdz/run/lb/mhe/e/0equ.in"
-for step in `cat /scratch/pbarletta/pdz/run/lb/mhe/e/step.list`
+i=29
+starting_mdin="/scratch/pbarletta/2pdz/run/lb/mhe/e/0equ.in"
+for step in `cat /scratch/pbarletta/2pdz/run/lb/mhe/e/step.list`
 do
 
     i=`expr $i + 1`
@@ -29,13 +29,13 @@ do
     if [ $i == 1 ]
     then
 
-        mdin=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"equ.in}
-        mdout=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"equ.out}
-        prmtop=${i/*/"/scratch/pbarletta/pdz/top_files/"lb.prmtop}
-        inpcrd=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/h/"hlb.rst7}
-        restrt=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"elb.rst7}
-        refc=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/h/"hlb.rst7}
-        mdcrd=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"elb.nc}
+        mdin=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"equ.in}
+        mdout=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"equ.out}
+        prmtop=${i/*/"/scratch/pbarletta/2pdz/top_files/"lb.prmtop}
+        inpcrd=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/h/"hlb.rst7}
+        restrt=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"elb.rst7}
+        refc=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/h/"hlb.rst7}
+        mdcrd=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"elb.nc}
 
         # In this 1st step mdin = starting_mdin
         sed "s/50\.0/${step}/" $starting_mdin > $mdin
@@ -50,12 +50,12 @@ do
     if [[ $i == 30 || $i == 31 ]]
     then
 
-	mdin=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/"pdt.in}
-        mdout=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"equ.out}
-        prmtop=${i/*/"/scratch/pbarletta/pdz/top_files/"lb.prmtop}
-        inpcrd=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$k"elb.rst7}
-        restrt=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"elb.rst7}
-        mdcrd=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"elb.nc}
+	mdin=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/"30equ.in}
+        mdout=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"equ.out}
+        prmtop=${i/*/"/scratch/pbarletta/2pdz/top_files/"lb.prmtop}
+        inpcrd=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$k"elb.rst7}
+        restrt=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"elb.rst7}
+        mdcrd=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"elb.nc}
  
         $MDEXE -O -i $mdin -o $mdout -p $prmtop -c $inpcrd -r $restrt -x $mdcrd
 
@@ -64,13 +64,13 @@ do
 	continue
     fi
 
-    mdin=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"equ.in}
-    mdout=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"equ.out}
-    prmtop=${i/*/"/scratch/pbarletta/pdz/top_files/"lb.prmtop}
-    inpcrd=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$k"elb.rst7}
-    restrt=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"elb.rst7}
-    refc=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$k"elb.rst7}
-    mdcrd=${i/*/"/scratch/pbarletta/pdz/run/lb/mhe/e/""$i"elb.nc}
+    mdin=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"equ.in}
+    mdout=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"equ.out}
+    prmtop=${i/*/"/scratch/pbarletta/2pdz/top_files/"lb.prmtop}
+    inpcrd=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$k"elb.rst7}
+    restrt=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"elb.rst7}
+    refc=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$k"elb.rst7}
+    mdcrd=${i/*/"/scratch/pbarletta/2pdz/run/lb/mhe/e/""$i"elb.nc}
 
     sed "s/50\.0/${step}/" $starting_mdin > $mdin
 

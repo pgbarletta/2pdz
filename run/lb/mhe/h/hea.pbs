@@ -1,19 +1,19 @@
 #!/bin/bash
-#PBS -N lb_pdz_heat
+#PBS -N lb_2pdz_heat
 #PBS -o pbs.out
 #PBS -e pbs.err
 #PBS -j oe
-#PBS -l nodes=isengard:ppn=1:gpus=1
+#PBS -l nodes=mordor:ppn=1:gpus=1
 #PBS -l walltime=1000:00:00
 
 ########### Specify the input and output file names #############
 # Input Files
 IN_FILE=hea.in
-CRD_FILE=/scratch/pbarletta/pdz/run/lb/mhe/m/mmlb.rst7
-REFC_FILE=/scratch/pbarletta/pdz/run/lb/mhe/m/mmlb.rst7
-TOP_FILE=/scratch/pbarletta/pdz/top_files/lb.prmtop
+CRD_FILE=/scratch/pbarletta/2pdz/run/lb/mhe/m/mmlb.rst7
+REFC_FILE=/scratch/pbarletta/2pdz/run/lb/mhe/m/mmlb.rst7
+TOP_FILE=/scratch/pbarletta/2pdz/top_files/lb.prmtop
 # Output Files
-OUT_FILE=hlb.out
+OUT_FILE=hea.out
 MD_FILE=hlb.nc
 RST_FILE=hlb.rst7
 

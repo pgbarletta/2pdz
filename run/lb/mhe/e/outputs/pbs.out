@@ -1,0 +1,29 @@
+
+[4m    Welcome to [4;5;44m Mordor [0m[4m, a server from the Roitberg group[0m
+     pbarletta 
+
+    If you experience any problems please contact:
+      Vinicius Cruzeiro (vwcruzeiro@ufl.edu)
+      Justin Smith (jsmith48@ufl.edu)
+
+    [4;5;43mFor system information type:[0m mordorinfo
+
+    The jobs running on the PBS TORQUE are: 
+     37494.mordor         pbarlett batch    lb_pdz            16483     1   0    --  1000: R 01:59   mordor/1
+     37495.mordor         roitberg batch    sub_C2.sh         17143     1   1    --  72:00 R 01:37   mordor/0
+     37503.mordor         pbuteler batch    hrr_gdp_ttp        6899     1   0    --  300:0 R 00:12   isengard/0
+     37504.mordor         pbarlett batch    lb_2pdz_equ       20360     1   0    --  1000: R   --    mordor/2
+
+    Current users logged in (use 'write [user name]' to communicate):
+     roitberg pts/1        Nov  3 09:08 (10.136.76.219)
+     jsmith48 pts/3        Nov  3 09:12 (10.227.16.31)
+     pbarletta pts/8        Nov  3 15:12 (10.136.253.200)
+     pbarletta pts/9        Nov  3 15:13 (10.136.253.200)
+
+
+    The rhythm method: it sounds good on paper, just like lighting
+    yourself on fire to keep warm.
+    
+Step: 30
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Done single step: 30

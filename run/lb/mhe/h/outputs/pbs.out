@@ -1,0 +1,32 @@
+
+[4m    Welcome to [4;5;44m Mordor [0m[4m, a server from the Roitberg group[0m
+     pbarletta 
+
+    If you experience any problems please contact:
+      Vinicius Cruzeiro (vwcruzeiro@ufl.edu)
+      Justin Smith (jsmith48@ufl.edu)
+
+    [4;5;43mFor system information type:[0m mordorinfo
+
+    The jobs running on the PBS TORQUE are: 
+     37494.mordor         pbarlett batch    lb_pdz            16483     1   0    --  1000: R 00:45   mordor/1
+     37495.mordor         roitberg batch    sub_C2.sh         17143     1   1    --  72:00 R 00:23   mordor/0
+     37496.mordor         pbarlett batch    lb_2pdz_heat      17992     1   0    --  1000: R   --    mordor/2
+
+    Current users logged in (use 'write [user name]' to communicate):
+     pbarletta pts/0        Nov  3 14:28 (10.136.77.14)
+     roitberg pts/1        Nov  3 09:08 (10.136.76.219)
+     pbarletta pts/2        Nov  3 14:28 (10.136.77.14)
+     jsmith48 pts/3        Nov  3 09:12 (10.227.16.31)
+     pbuteler pts/4        Nov  3 11:49 (10.30.173.135)
+     pbarletta pts/5        Nov  3 14:28 (10.136.77.14)
+     pbarletta pts/6        Nov  3 14:28 (10.136.77.14)
+     cdever01 pts/7        Nov  3 14:49 (10.136.114.89)
+     pbarletta pts/8        Nov  3 15:12 (10.136.253.200)
+     pbarletta pts/9        Nov  3 15:13 (10.136.253.200)
+
+
+    Men willingly believe what they wish.
+    	-- Julius Caesar
+    
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
